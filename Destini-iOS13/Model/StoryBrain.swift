@@ -44,4 +44,16 @@ struct StoryBrain{
         )      
     ]
     
+    var currIndex = 0
+    
+    
+    func getStory() -> Story {
+        return stories[currIndex]
+    }
+    
+    
+    mutating func goNextStory(){
+        currIndex += 1
+    }
+    
 }
