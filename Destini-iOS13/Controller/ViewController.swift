@@ -28,14 +28,37 @@ class ViewController: UIViewController {
         
         
         choice2Button.setTitle(firstStory.choice2, for: UIControl.State.normal)
+        
+     //   storyLogic.goNextStory()
+
+        
+        
 
     }
     
     
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        
+        let currStory = storyLogic.getStory()
+        
+        let choice1 = choice1Button.titleLabel;
+        
+    
+        if (sender.titleLabel == choice1){
+            storyLogic.goNextStory(currStory.choice1Destination)
+        }else{
+            print(sender.titleLabel!)
+            storyLogic.goNextStory(currStory.choice2Destination)
+           // print(currStory.choice2Destination)
+        }
+        
+        updateUI()
+        
+        
+    }
     
     
     func updateUI() {
-        storyLogic.goNextStory()
         
         let nextStory = storyLogic.getStory()
         

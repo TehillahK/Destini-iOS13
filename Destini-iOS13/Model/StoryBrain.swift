@@ -52,8 +52,10 @@ struct StoryBrain{
     }
     
     
-    mutating func goNextStory(){
-        currIndex += 1
+    mutating func goNextStory(_ destination: Int){
+        currIndex = destination
     }
+    
+    
     
 }
